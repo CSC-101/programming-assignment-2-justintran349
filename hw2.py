@@ -1,5 +1,5 @@
 import data
-from data import Rectangle
+from typing import Optional
 
 
 # Write your functions for each part in the space below.
@@ -10,8 +10,8 @@ def create_rectangle(p1: data.Point, p2: data.Point)-> data.Rectangle:
     top_left_y = max(p1.y, p2.y)
     bottom_right_x = max(p1.x, p2.x)
     bottom_right_y = min(p1.y, p2.y)
-    top_left = (top_left_x, top_left_y)
-    bottom_right = (bottom_right_x, bottom_right_y)
+    top_left = data.Point(top_left_x, top_left_y)
+    bottom_right = data.Point(bottom_right_x, bottom_right_y)
     return data.Rectangle(top_left, bottom_right)
 
 # Part 2
@@ -50,7 +50,7 @@ def validate_route(city_links: list[list[str]], route: list[str]) -> bool:
     return True
 
 # Part 6
-def longest_repetition(numbers: list[int]) -> data.Optional[int]:
+def longest_repetition(numbers: list[int]) -> [int]:
     if not numbers:
         return None
     max_length = 1

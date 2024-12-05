@@ -9,23 +9,20 @@ class TestCases(unittest.TestCase):
 
     # Part 1
     def test_create_rectangle_1(self):
-        p1 = data.Point(2,1)
-        p2 = data.Point(1,2)
-        result = hw2.create_rectangle(p1,p2)
-        expected = data.Rectangle(data.Point(2,1),data.Point(1,2))
+        input1, input2 = data.Point(8,4), data.Point(4,6)
+        result = hw2.create_rectangle(input1,input2)
+        expected = data.Rectangle(data.Point(4,6),data.Point(8,4))
         self.assertEqual(expected, result)
     def test_create_rectangle_2(self):
-        p1 = data.Point(3,1)
-        p2 = data.Point(1,3)
-        result = hw2.create_rectangle(p1,p2)
-        expected = data.Rectangle(data.Point(3,1),data.Point(1,3))
+        input1, input2 = data.Point(7,4), data.Point(3,5)
+        result = hw2.create_rectangle(input1,input2)
+        expected = data.Rectangle(data.Point(3,5),data.Point(7,4))
         self.assertEqual(expected, result)
     # Part 2
-    # def test_shorter_duration_than(self):
     def test_shorter_than_duration_1(self):
-        duration1 = "1:33:00"
-        duration2 = "2:00:00"
-        result = hw2.shorter_duration_than(duration1, duration2)
+        data.duration1 = "2:33:00"
+        data.duration2 = "1:10:00"
+        result = hw2.shorter_duration_than(data.duration1, data.duration2)
         expected = False
         self.assertEqual(expected, result)
     def test_shorter_than_duration_2(self):
